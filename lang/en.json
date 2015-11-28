@@ -1,0 +1,10 @@
+{
+  "title": "LightsOnLux",
+  "description": "Switch one or more lights based on (outside) lux levels to simulate presence.",
+  "selectluxdevice_label": "Select one device",
+  "selectluxdevice_header": "Select a lux sensor",
+  "onlevel_label": "Enter the lux level on or below which devices switch on",
+  "offlevel_label": "Enter the lux level on or above which devices switch off",
+  "selectonoffdevices": "Select on/off devices to switch",
+  "selectdimmerdevices": "Select dimmer devices to switch"
+ }

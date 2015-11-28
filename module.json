@@ -1,0 +1,130 @@
+{
+   "author" : "CopyCat73",
+   "category" : "basic_gateway_modules",
+   "defaults" : {
+      "description" : "__description__",
+      "title" : "__title__"
+   },
+   "dependencies" : [],
+   "homepage" : "https://github.com/CopyCat73",
+   "icon" : "icon.png",
+   "maturity" : "stable",
+   "moduleName" : "LightsOnLux",
+   "options" : {
+      "fields" : {
+         "luxsensor" : {
+            "datasource" : "namespaces",
+            "field" : "optionLabels",
+            "label" : "__selectluxdevice_header__",
+            "optionLabels" : "namespaces:devices_sensorMultilevel:deviceName",
+            "type" : "select",
+            "order" : 1
+         },
+         "lux_level_on" : {
+            "label" : "__onlevel_label__",
+            "order" : 2
+         },                     
+         "lux_level_off" : {
+            "label" : "__offlevel_label__",
+            "order" : 3
+         },
+         "onofflights" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_switchBinary:deviceName",
+                        "type" : "select"
+                     }
+                  }
+               }
+            },
+            "label" : "__selectonoffdevices__",
+            "order" : 4
+         },         
+         "dimmers" : {
+            "fields" : {
+               "item" : {
+                  "fields" : {
+                     "device" : {
+                        "datasource" : "namespaces",
+                        "field" : "optionLabels",
+                        "label" : "",
+                        "optionLabels" : "namespaces:devices_switchMultilevel:deviceName",
+                        "type" : "select"
+                     },                    
+                     "setlevel" : {
+                        "label" : "__setlevel_label__"
+                     }
+                  }
+               }
+            },
+            "label" : "__selectdimmerdevices__",
+            "order" : 5
+         }
+      }
+   },
+   "repository" : {
+      "source" : "https://github.com/CopyCat73/Zway-LightsOnLux",
+      "type" : "git"
+   },
+   "schema" : {
+      "properties" : {
+         "luxsensor" : {
+            "datasource" : "namespaces",
+            "enum" : "namespaces:devices_sensorMultilevel:deviceId",
+            "field" : "enum",
+            "required" : true
+         },
+         "lux_level_on" : {
+            "required" : true,
+            "type" : "integer"
+         },
+         "lux_level_off" : {
+            "required" : true,
+            "type" : "integer"
+         },
+         "onofflights" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_switchBinary:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  }                 
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         },  
+         "dimmers" : {
+            "items" : {
+               "properties" : {
+                  "device" : {
+                     "datasource" : "namespaces",
+                     "enum" : "namespaces:devices_switchMultilevel:deviceId",
+                     "field" : "enum",
+                     "required" : true
+                  },                 
+                  "level" : {
+                     "maximum" : 99,
+                     "minimum" : 0,
+                     "required" : true,
+                     "type" : "integer"
+                  }
+               },
+               "type" : "object"
+            },
+            "type" : "array"
+         }       
+      },
+      "required" : true,
+      "type" : "object"
+   },
+   "singleton" : true,
+   "version" : "1.00"
+}
