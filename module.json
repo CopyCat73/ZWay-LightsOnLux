@@ -56,7 +56,7 @@
                         "optionLabels" : "namespaces:devices_switchMultilevel:deviceName",
                         "type" : "select"
                      },                    
-                     "setlevel" : {
+                     "level" : {
                         "label" : "__setlevel_label__"
                      }
                   }

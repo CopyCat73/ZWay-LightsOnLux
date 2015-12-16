@@ -5,6 +5,7 @@
   "selectluxdevice_header": "Select a lux sensor",
   "onlevel_label": "Enter the lux level on or below which devices switch on",
   "offlevel_label": "Enter the lux level on or above which devices switch off",
+  "setlevel_label": "Set level",
   "selectonoffdevices": "Select on/off devices to switch",
   "selectdimmerdevices": "Select dimmer devices to switch"
  }
