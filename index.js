@@ -48,7 +48,7 @@ LightsOnLux.prototype.init = function (config) {
             _.each(that.config.dimmers,function(element) {
                 var vDev = that.controller.devices.get(element.device);
                 if (vDev) {
-                    vDev.set("metrics:level",el.level);
+                    vDev.performCommand('exact',{ level: el.level });
                 }
             });
             self.canSwitchOn = false;
